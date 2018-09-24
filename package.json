@@ -1,7 +1,7 @@
 {
-  "name": "mobx-react-boilerplate",
+  "name": "gush-horror-picture-show",
   "version": "1.0.0",
-  "description": "Boilerplate for MobX + React project with JSX, ES6 and decorator compilation",
+  "description": "Made on base of mobx-react-boilerplate",
   "scripts": {
     "start": "webpack-dev-server --hot --open",
     "lint": "eslint src"
@@ -12,12 +12,10 @@
   },
   "keywords": [
     "react",
-    "reactjs",
-    "boilerplate",
     "mobx",
-    "starter-kit"
+    "fe test"
   ],
-  "author": "Michel Weststrate <mweststrate@gmail.com> (http://github.com/mweststrate)",
+  "author": "Gush Goldstein",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/mobxjs/mobx/issues"
