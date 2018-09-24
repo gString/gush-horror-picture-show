@@ -1,7 +1,7 @@
 {
   "name": "gush-horror-picture-show",
   "version": "1.0.0",
-  "description": "Made on base of mobx-react-boilerplate",
+  "description": "Based on mobx-react-boilerplate",
   "scripts": {
     "start": "webpack-dev-server --hot --open",
     "lint": "eslint src"
