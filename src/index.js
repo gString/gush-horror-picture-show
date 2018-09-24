@@ -1,28 +1,22 @@
 import React from "react";
 import { render } from "react-dom";
-import DevTools from "mobx-react-devtools";
+import { configure } from "mobx";
+import { Provider } from "mobx-react";
 
-import TodoList from "./components/TodoList";
-import TodoListModel from "./models/TodoListModel";
-import TodoModel from "./models/TodoModel";
+import RootStore from './models/RootStore';
+import App from "./components/App";
 
-const store = new TodoListModel();
+const rootStore = new RootStore();
+// only the movies store is relevant for the UI
+const store = rootStore.movieStore;
+store.fetchMovies();
 
-render(
-  <div>
-    <DevTools />
-    <TodoList store={store} />
-  </div>,
-  document.getElementById("root")
+render (
+	<Provider store={ store }>
+		<App/>
+	</Provider>,
+	document.getElementById ("root")
 );
 
-store.addTodo("Get Coffee");
-store.addTodo("Write simpler code");
-store.todos[0].finished = true;
-
-setTimeout(() => {
-  store.addTodo("Get a cookie as well");
-}, 2000);
-
-// playing around in the console
-window.store = store;
+// mobx global configuration
+configure ({ enforceActions: "observed" });
